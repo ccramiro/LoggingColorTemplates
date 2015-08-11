@@ -1,0 +1,108 @@
+; TextPad syntax definitions for plain text files
+; An attempt at a generic syntax for log files
+; This should make visual scanning of big, fat, ugly logs a lot easier.
+;
+; For installing this file:
+; 1. Copy file to system directory in Textpad installation ( e.g. C:\Program Files (x86)\TextPad 6\system)
+; 2. Textpad -> Configure -> Preferences -> Document classes and create a new one
+;    If there is one created with the name "logs", it can be used
+; 3. Go to that class -> Syntax and choose syntax definition file "TextpadLoggingColorTemplate.syn"
+; 4. Go to colors to set the different colors per group of keywords
+;
+; Recommended color settings:
+;   Keywords1 - red
+;   Keywords2 - orange
+;   Keywords3 - green
+;   Keywords4 - blue
+;   Keywords5 - pink
+;   Comments - light gray
+;   Brackets - dark purple
+
+C=1
+
+[Syntax]
+Namespace1 = 6
+IgnoreCase = Yes
+BracketChars = <{([])}>
+OperatorChars = .+-|:?/*&
+PreprocStart =
+SyntaxStart =
+SyntaxEnd =
+CommentStart =
+CommentEnd =
+CommentStartAlt =
+CommentEndAlt =
+SingleComment =
+SingleCommentCol =
+SingleCommentAlt =
+SingleCommentColAlt =
+StringStart = '
+StringEnd = '
+StringAlt = "
+StringEsc =
+CharStart =
+CharEnd =
+CharEsc =
+
+;these are the bad words -> bright red
+[Keywords 1]
+Conflict
+Error
+Problem
+Wrong
+Disconnect
+disconnected
+red
+exception
+exceptions
+unexpected
+unexpectedly
+errorcodes
+critical
+
+; warning: orange
+[Keywords 2]
+WARN
+WARNING
+suspicious
+invalid
+failed
+orange
+yellow
+wrong
+illegal
+invalid
+canceled
+negative
+nil
+deadlock
+blocking
+
+;these are good words -> green
+[Keywords 3]
+OKAY
+Executed
+connected
+green
+success
+successful
+successfully
+
+;these are usually associated with information
+;blue works well here
+[Keywords 4]
+DEFAULT
+INFO
+LOG
+USER
+DEBUG
+NOTIC
+NOTICE
+reason
+
+; event -> purple
+[Keywords 5]
+event
+Event
+trigger
+triggered
