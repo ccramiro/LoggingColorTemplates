@@ -1,17 +1,15 @@
 #!/bin/bash
 
-# This scripts is meant to override mvn command in MacOS
+# This script is meant to override mvn command in Linux
 # in order to replace output with proper format and color
 # To override mvn command, following command should
-# be added to $HOME/.bash_profile,
+# be added to $HOME/.bashrc,
 # being $PATH_TO_SCRIPT the path where this bash script is located
 # alias mvn="$PATH_TO_SCRIPT"
 # Example:
-# alias mvn="/Users/ccramiro/scripts/MavenLoggingColorTemplate.sh"
+# alias mvn="/home/ccramiro/scripts/MavenLoggingColorTemplate.sh"
 # Don't forget to give execution permissions to this script:
 # chmod +x MavenLoggingColorTemplate.sh
-
-echo "OVERRIDING MVN"
 
 # Color and formar constants
 
@@ -35,3 +33,4 @@ mvn $@ | sed -e "s/\[INFO\]/${BOLD}${TEXT_CYAN}\[INFO\]${RESET_FORMATTING}/g" \
  
 # Restoring format
 echo -ne ${RESET_FORMATTING}
+
