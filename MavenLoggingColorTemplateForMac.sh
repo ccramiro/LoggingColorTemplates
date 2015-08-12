@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# This scripts is meant to override mvn command
+# This scripts is meant to override mvn command in MacOS
 # in order to replace output with proper format and color
 # To override mvn command, following command should
-# be added to $HOME/.bashrc (Linux) or $HOME/.bash_profile (MAC),
+# be added to $HOME/.bash_profile,
 # being $PATH_TO_SCRIPT the path where this bash script is located
 # alias mvn="$PATH_TO_SCRIPT"
 # Example:
