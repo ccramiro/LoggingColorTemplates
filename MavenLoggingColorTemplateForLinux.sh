@@ -22,10 +22,15 @@ export RESET_FORMATTING="$(printf '\033[0m')"
 
 # Filtering maven output using sed
 mvn $@ | sed -e "s/\[INFO\]/${BOLD}${TEXT_CYAN}\[INFO\]${RESET_FORMATTING}/g" \
+          -e "s/------------------/${BOLD}${TEXT_CYAN}------------------${RESET_FORMATTING}/g" \
+          -e "s/Building \([^,]*\)/${BOLD}${TEXT_CYAN}\1${RESET_FORMATTING}/g" \
           -e "s/BUILD SUCCESS/${BOLD}${TEXT_GREEN}BUILD SUCCESS${RESET_FORMATTING}/g" \
+          -e "s/SUCCESS/${BOLD}${TEXT_GREEN}SUCCESS${RESET_FORMATTING}/g" \
+          -e "s/Total time:/${BOLD}${TEXT_YELLOW}TOTAL TIME:${RESET_FORMATTING}/g" \
           -e "s/\[WARNING\]/${BOLD}${TEXT_YELLOW}\[WARNING\]${RESET_FORMATTING}/g" \
+          -e "s/SKIPPED/${BOLD}${TEXT_YELLOW}SKIPPED${RESET_FORMATTING}/g" \
           -e "s/BUILD FAILURE/${BOLD}${TEXT_RED}BUILD FAILURE${RESET_FORMATTING}/g" \
-          -e "s/FAILURE!/${BOLD}${TEXT_RED}FAILURE!${RESET_FORMATTING}/g" \
+          -e "s/FAILURE/${BOLD}${TEXT_RED}FAILURE${RESET_FORMATTING}/g" \
           -e "s/ERROR!/${BOLD}${TEXT_RED}ERROR!${RESET_FORMATTING}/g" \
           -e "s/\[ERROR\]/${BOLD}${TEXT_RED}\[ERROR\]${RESET_FORMATTING}/g" \
           -e "s/T E S T S/${BOLD}${TEXT_YELLOW}T E S T S${RESET_FORMATTING}/g" \
